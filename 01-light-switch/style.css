@@ -1,0 +1,44 @@
+:root {
+  font-size: 16px;
+}
+
+html,
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  transition: background-color 2s ease-in-out;
+}
+
+button {
+  padding: 1.25rem 1.75rem;
+  border: 8px solid black;
+  border-radius: 3px;
+  background-color: transparent;
+  font-size: 2rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  transition: background-color 2s ease-in-out, color 2s ease-in-out;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.dark button {
+  background-color: black;
+  border: 8px solid white;
+  color: white;
+  box-shadow: 0px 0px 35px yellow;
+}
