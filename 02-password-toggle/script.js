@@ -8,21 +8,26 @@ const toggleButtonElement = document.querySelector("button");
 const textHide = "Hide Password";
 const textShow = "Show Password";
 
-if (inputElement.type === "password") {
-  toggleButtonElement.innerText = textShow;
-} else {
-  toggleButtonElement.innerText = textHide;
+// Variable for current input type
+const currentInputType = inputElement.type;
+
+// Summarizes Code within a function
+function setButtonText() {
+  if (inputElement.type === "password") {
+    toggleButtonElement.textContent = textShow;
+  } else {
+    toggleButtonElement.textContent = textHide;
+  }
 }
+
+setButtonText();
 
 // function for toggling input type and button text
 toggleButtonElement.addEventListener("click", function () {
   if (inputElement.type === "password") {
-    //inputElement.setAttribute("type", "text");
     inputElement.type = "text";
-    toggleButtonElement.innerText = textHide;
   } else {
-    //inputElement.setAttribute("type", "password");
     inputElement.type = "password";
-    toggleButtonElement.innerText = textShow;
   }
+  setButtonText();
 });
