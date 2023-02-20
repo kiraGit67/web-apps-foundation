@@ -1,14 +1,28 @@
-// Variables for input and button
-const input = document.querySelector("input");
-const button = document.querySelector("button");
+// input password field
+const inputElement = document.querySelector("input");
+
+// toggle button element
+const toggleButtonElement = document.querySelector("button");
+
+// Variables for button text
+const textHide = "Hide Password";
+const textShow = "Show Password";
+
+if (inputElement.type === "password") {
+  toggleButtonElement.innerText = textShow;
+} else {
+  toggleButtonElement.innerText = textHide;
+}
 
 // function for toggling input type and button text
-button.addEventListener("click", function () {
-  if (input.type === "password") {
-    input.setAttribute("type", "text");
-    button.innerText = "Hide Password";
+toggleButtonElement.addEventListener("click", function () {
+  if (inputElement.type === "password") {
+    //inputElement.setAttribute("type", "text");
+    inputElement.type = "text";
+    toggleButtonElement.innerText = textHide;
   } else {
-    input.setAttribute("type", "password");
-    button.innerText = "Show Password";
+    //inputElement.setAttribute("type", "password");
+    inputElement.type = "password";
+    toggleButtonElement.innerText = textShow;
   }
 });
