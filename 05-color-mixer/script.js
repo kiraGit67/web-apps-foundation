@@ -2,6 +2,9 @@ const body = document.querySelector("body");
 
 const colorDisplay = document.querySelector(".color-display");
 
+const sliders = document.querySelectorAll("input[type='range']");
+console.log(sliders);
+
 const sliderRed = document.querySelector("input[type='range'].red");
 console.log(sliderRed.value);
 
@@ -31,15 +34,3 @@ body.style.backgroundColor =
   ")";
 
 console.log(body.style.backgroundColor);
-
-function changed(slider) {
-  if (slider === sliderRed) {
-    sliderRed.value = slider.value;
-  }
-  if (slider === sliderGreen) {
-    sliderGreen.value = slider.value;
-  }
-  if (slider === sliderBlue) {
-    sliderBlue.value = slider.value;
-  }
-}
