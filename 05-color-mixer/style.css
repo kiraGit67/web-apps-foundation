@@ -1,0 +1,48 @@
+:root {
+  font-size: 20px;
+}
+
+html,
+* {
+  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: rgb(50, 50, 50); */
+  background-color: rgb(255, 105, 180);
+}
+
+header {
+  margin: 0;
+  padding: 2em 3em;
+  background-color: rgba(255, 255, 255, 0.65);
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: row;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.color-display p {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+input[type="range"] {
+  transform: scale(1.5);
+}
+
+input[type="range"].red {
+  background-color: red;
+}
