@@ -14,17 +14,7 @@ console.log(sliderGreen.value);
 const sliderBlue = document.querySelector("input[type='range'].blue");
 console.log(sliderBlue.value);
 
-colorDisplay.innerText =
-  "rgb(" +
-  sliderRed.value +
-  ", " +
-  sliderGreen.value +
-  ", " +
-  sliderBlue.value +
-  ")";
-console.log(colorDisplay.innerText);
-
-body.style.backgroundColor =
+const colorRGBvalue =
   "rgb(" +
   sliderRed.value +
   ", " +
@@ -33,4 +23,23 @@ body.style.backgroundColor =
   sliderBlue.value +
   ")";
 
-console.log(body.style.backgroundColor);
+// Turn step by step into hex value
+const rgbString = colorRGBvalue.split("(")[1].split(")")[0];
+const rgbArray = rgbString.split(",");
+
+let hexArray = [];
+
+for (let rgbItem of rgbArray) {
+  let hexItem = parseInt(rgbItem).toString(16);
+  if (hexItem.length === 1) {
+    hexArray.push("0" + hexItem);
+  } else {
+    hexArray.push(hexItem);
+  }
+}
+
+let hexString = "#" + hexArray.join("");
+
+colorDisplay.innerText = hexString;
+
+body.style.backgroundColor = hexString;
