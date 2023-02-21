@@ -12,14 +12,8 @@ const resetButton = document.querySelector("button");
 counterContainer.innerHTML = counterNumber;
 backgroundArea.style.width = counterSteps + "%";
 
-// Add EventListener to the variables
-mainArea.addEventListener("click", function () {
+function backgroundCounter() {
   counterNumber++;
-  //counterSteps++;
-
-  console.log("Main has been clicked.");
-  console.log(counterNumber);
-
   counterContainer.innerHTML = counterNumber;
 
   if (counterSteps < 100) {
@@ -28,6 +22,19 @@ mainArea.addEventListener("click", function () {
   } else {
     counterSteps = 0;
     backgroundArea.style.width = counterSteps + "%";
+  }
+}
+
+// Add EventListener to the variables
+mainArea.addEventListener("click", function () {
+  backgroundCounter();
+});
+
+document.addEventListener("keydown", (evt) => {
+  const keyName = evt.key;
+
+  if (keyName === "Enter" || evt.key === " ") {
+    backgroundCounter();
   }
 });
 
