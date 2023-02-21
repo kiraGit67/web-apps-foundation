@@ -1,3 +1,5 @@
+"use strict";
+
 // General Variable for all 3 checkboxes
 const checkBoxes = document.querySelectorAll("input");
 console.log(checkBoxes);
@@ -6,6 +8,10 @@ console.log(checkBoxes);
 const checkFast = document.querySelector("#fast");
 const checkCheap = document.querySelector("#cheap");
 const checkGood = document.querySelector("#good");
+
+let isFast;
+let isCheap;
+let isGood;
 
 // Function for checking which of 3 checkboxes are checked
 function changed(checkBox) {
@@ -23,3 +29,15 @@ function changed(checkBox) {
     checkGood.checked = false;
   }
 }
+
+checkFast.addEventListener("change", function () {
+  changed(checkFast);
+});
+
+checkCheap.addEventListener("change", function () {
+  changed(checkCheap);
+});
+
+checkGood.addEventListener("change", function () {
+  changed(checkGood);
+});
