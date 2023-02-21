@@ -1,3 +1,5 @@
+"use strict";
+
 //Variables for counter-paragraph and counter number
 let counterNumber = 0;
 let counterSteps = 0;
