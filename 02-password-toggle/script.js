@@ -1,3 +1,5 @@
+"use strict";
+
 // input password field
 const inputElement = document.querySelector("input");
 
