@@ -13,12 +13,21 @@ let isFast;
 let isCheap;
 let isGood;
 
+let lastChanged = "";
+
 // Function for checking which of 3 checkboxes are checked
 function changed(checkBox) {
   isFast = checkFast.checked;
   isCheap = checkCheap.checked;
   isGood = checkGood.checked;
 
+  if (isGood && isFast && isGood) {
+    lastChanged.checked = false;
+    lastChanged = checkBox;
+  } else {
+    lastChanged = checkBox;
+  }
+  /*  
   if (isFast && isCheap && isGood && checkBox === checkGood) {
     checkCheap.checked = false;
   }
@@ -28,6 +37,7 @@ function changed(checkBox) {
   if (isGood && isFast && isCheap && checkBox === checkFast) {
     checkGood.checked = false;
   }
+  */
 }
 
 checkFast.addEventListener("change", function () {
