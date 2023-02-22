@@ -15,14 +15,16 @@ backgroundArea.style.width = counterSteps + "%";
 function backgroundCounter() {
   counterNumber++;
   counterContainer.innerHTML = counterNumber;
-
+  /*
   if (counterSteps < 100) {
     counterSteps++;
-    backgroundArea.style.width = counterSteps + "%";
   } else {
-    counterSteps = 0;
-    backgroundArea.style.width = counterSteps + "%";
+    counterSteps = 1;
   }
+  */
+  counterSteps = counterSteps < 100 ? counterSteps + 1 : 1;
+
+  backgroundArea.style.width = counterSteps + "%";
 }
 
 // Add EventListener to the variables
