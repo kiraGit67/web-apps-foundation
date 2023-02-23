@@ -14,35 +14,26 @@ console.log(sliderGreen.value);
 const sliderBlue = document.querySelector("input[name='blue']");
 console.log(sliderBlue.value);
 
-function updateColorValue() {
-  const colorRGBvalue =
-    "rgb(" +
-    sliderRed.value +
-    ", " +
-    sliderGreen.value +
-    ", " +
-    sliderBlue.value +
-    ")";
-
-  // Turn step by step into hex value
-  const rgbString = colorRGBvalue.split("(")[1].split(")")[0];
-  const rgbArray = rgbString.split(",");
-
+function rgb2hex(array) {
   let hexArray = [];
 
-  for (let rgbItem of rgbArray) {
-    let hexItem = parseInt(rgbItem).toString(16);
+  for (let item of array) {
+    let hexItem = parseInt(item).toString(16);
     if (hexItem.length === 1) {
       hexArray.push("0" + hexItem);
     } else {
       hexArray.push(hexItem);
     }
   }
-
   let hexString = "#" + hexArray.join("");
+  return hexString;
+}
 
-  colorDisplay.innerText = hexString;
-  body.style.backgroundColor = hexString;
+function updateColorValue() {
+  const rgbArray = [sliderRed.value, sliderGreen.value, sliderBlue.value];
+
+  colorDisplay.innerText = rgb2hex(rgbArray);
+  body.style.backgroundColor = rgb2hex(rgbArray);
 }
 
 sliderRed.addEventListener("input", updateColorValue);
