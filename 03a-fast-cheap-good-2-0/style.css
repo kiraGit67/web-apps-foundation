@@ -1,0 +1,26 @@
+:root {
+  font-size: 36px;
+}
+
+html {
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  column-gap: 0.5rem;
+}
+
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+}
