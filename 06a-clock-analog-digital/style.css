@@ -54,4 +54,35 @@ main {
 .digital-clock {
   font-size: 2rem;
   font-weight: 600;
+  position: relative;
+}
+
+.pointer {
+  background-image: linear-gradient(to right, black, transparent);
+  position: absolute;
+  bottom: 46.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: bottom center;
+}
+
+.pointer--hour {
+  background-color: blue;
+  width: 0.6rem;
+  height: 12.5%;
+  transform: rotate(0deg);
+}
+
+.pointer--minute {
+  background-color: green;
+  width: 0.4rem;
+  height: 20%;
+  transform: rotate(0deg);
+}
+
+.pointer--second {
+  background-color: red;
+  width: 0.2rem;
+  height: 22.5%;
+  transform: rotate(0deg);
 }
